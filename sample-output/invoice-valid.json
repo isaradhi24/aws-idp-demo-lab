@@ -1,0 +1,8 @@
+{
+  "document_id": "DOC-1001",
+  "invoice_number": "INV-1001",
+  "vendor_name": "ABC Technologies",
+  "invoice_date": "2026-10-21",
+  "total_amount": "1250.00",
+  "currency": "USD"
+}

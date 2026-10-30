@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "documentClass": "Invoice",
+  "description": "Extract structured fields from supplier invoices for the aws-idp-demo-lab reference architecture.",
+  "type": "object",
+  "properties": {
+    "invoice_number": {
+        "type": "string",
+        "inferenceType": "extractive",
+        "description": "Invoice number exactly as shown on the document. Do not invent a value."
+    },
+    "vendor_name": {
+        "type": "string",
+        "inferenceType": "extractive", 
+        "description": "Legal or trading name of the supplier issuing the invoice."
+    },
+    "invoice_date": {
+        "type": "string",
+        "inferenceType": "inferred", 
+        "description": "Invoice issue date in YYYY-MM-DD format; derive only from a date present on the document."
+    },
+    "due_date": {
+        "type": "string",
+        "inferenceType": "inferred", 
+        "description": "Payment due date in YYYY-MM-DD format, only if present on the invoice."
+    },
+    "currency": {
+        "type": "string",
+        "inferenceType": "inferred", "description": "Three-letter ISO currency code corresponding to the invoice currency."},
+    "subtotal": {
+        "type": "number",
+        "inferenceType": "extractive", 
+        "description": "Subtotal amount before taxes, if explicitly stated."
+    },
+    "tax_amount": {
+        "type": "number", 
+        "inferenceType": "extractive", 
+        "description": "Total tax amount shown on the invoice, if present."
+    },
+    "total_amount": {
+        "type": "number", 
+        "inferenceType": "extractive", 
+        "description": "Final invoice total payable; do not substitute subtotal."
+    }
+ }
+}
