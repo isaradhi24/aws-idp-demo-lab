@@ -2,7 +2,7 @@ resource "aws_s3_bucket" "documents" {
   bucket = "${var.project_name}-${var.aws_account_id}-${var.aws_region}"
 
   force_destroy = true
-
+}
 
 resource "aws_s3_bucket_versioning" "documents" {
   bucket = aws_s3_bucket.documents.id
