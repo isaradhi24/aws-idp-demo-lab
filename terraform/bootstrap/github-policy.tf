@@ -47,6 +47,7 @@ data "aws_iam_policy_document" "github_deploy" {
       "s3:ListBucket",
       "s3:GetBucket*",
       "s3:GetAccelerateConfiguration",
+      "s3:GetLifecycleConfiguration",
       "s3:PutBucket*",
       "s3:DeleteBucket*",
       "s3:GetObject",
