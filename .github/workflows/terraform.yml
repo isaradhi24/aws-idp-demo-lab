@@ -66,7 +66,13 @@ jobs:
 
       - name: Verify AWS identity
         run: aws sts get-caller-identity
+        
+      - name: Test S3 permissions
+        run: |
+          aws s3api get-bucket-accelerate-configuration \
+            --bucket aws-idp-demo-lab-149703445367-us-east-1
 
+          echo "S3 acceleration API succeeded"
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
